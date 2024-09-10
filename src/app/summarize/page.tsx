@@ -14,18 +14,23 @@ export default async function Summarize({
   if (!searchParams?.["id"]) {
     return notFound();
   }
-  const summary = await getSummary(searchParams?.["id"]);
+  
+  const summary = await getSummary(searchParams["id"]);
   if (!summary) {
     return notFound();
   }
-  const session: CustomSession | null = await getServerSession(authOptions);
-    const userCoins = await getUserCoins(session.user.id);
-  
 
+  const session: CustomSession | null = await getServerSession(authOptions);
+
+  if (!session || !session.user || !session.user.id) {
+    return notFound(); // Handle case where session or session.user.id is undefined
+  }
+
+  const userCoins = await getUserCoins(session.user.id);
 
   return (
     <div className="container">
-      <DashNav user={session?.user!} userCoins={userCoins} />
+      <DashNav user={session.user} userCoins={userCoins} />
       <SummaryBase summary={summary} />
     </div>
   );
