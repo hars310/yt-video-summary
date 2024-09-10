@@ -1,5 +1,5 @@
 "use client";
-import  { Suspense, useState } from "react";
+import React, { Suspense, useState } from "react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -7,9 +7,9 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "../ui/dropdown-menu";
+} from "@/components/ui/dropdown-menu";
 import UserAvatar from "./UserAvatar";
-import { CustomUser } from "../../app/api/auth/[...nextauth]/options";
+import { CustomUser } from "@/app/api/auth/[...nextauth]/options";
 import LogoutModal from "../auth/LogoutModal";
 import { useRouter } from "next/navigation";
 
@@ -25,7 +25,7 @@ export default function ProfileDropdown({ user }: { user: CustomUser | null }) {
       )}
       <DropdownMenu>
         <DropdownMenuTrigger>
-          <UserAvatar image={user?.image ?? ""} name={user?.name ?? ""} />
+          <UserAvatar image={user?.image ?? ""} name={user?.name!} />
         </DropdownMenuTrigger>
         <DropdownMenuContent>
           <DropdownMenuLabel>My Account</DropdownMenuLabel>
