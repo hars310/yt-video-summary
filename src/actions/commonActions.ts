@@ -1,5 +1,5 @@
 "use server";
-import prisma from "../lib/db.config";
+import prisma from "@/lib/db.config";
 import { revalidateTag, unstable_cache } from "next/cache";
 
 export async function updateSummary(id: string, data: string): Promise<void> {
@@ -57,3 +57,4 @@ export async function coinsSpend(
 export const clearCache = (key: string) => {
   revalidateTag(key);
 };
+

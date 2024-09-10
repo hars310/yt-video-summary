@@ -1,5 +1,6 @@
 "use server";
-import prisma from "../lib/db.config";
+import prisma from "@/lib/db.config";
+import { ChatType } from "@/types";
 import { unstable_cache } from "next/cache";
 
 export const getUserOldSummaries = unstable_cache(
