@@ -1,12 +1,13 @@
 "use client";
+import React from "react";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "../ui/dialog";
-import { Button } from "../ui/button";
+} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { signIn } from "next-auth/react";
 
@@ -31,7 +32,7 @@ export default function LoginModal() {
         </DialogHeader>
         <div className="text-center">
           <h1 className="text-3xl font-extrabold bg-gradient-to-r from-blue-500 to-indigo-600 bg-clip-text text-transparent">
-            PodBite
+            YT-SUMMARY
           </h1>
         </div>
         <Button variant="outline" onClick={handleGoogleLogin}>

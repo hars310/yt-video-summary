@@ -1,4 +1,4 @@
-import prisma from "../../../../lib/db.config";
+import prisma from "@/lib/db.config";
 import { AuthOptions, ISODateString, User } from "next-auth";
 import { JWT } from "next-auth/jwt";
 import GoogleProvider from "next-auth/providers/google";
@@ -7,7 +7,6 @@ export interface CustomSession {
   user?: CustomUser;
   expires: ISODateString;
 }
-
 export interface CustomUser {
   id?: string | null;
   name?: string | null;
@@ -15,8 +14,6 @@ export interface CustomUser {
   image?: string | null;
   provider?: string | null;
 }
-
-
 export const authOptions: AuthOptions = {
   pages: {
     signIn: "/",
@@ -38,8 +35,8 @@ export const authOptions: AuthOptions = {
           data: {
             email: user.email!,
             name: user.name!,
-            oauth_id: account?.providerAccountId || "",
-            provider: account?.provider || ""  ,
+            oauth_id: account?.providerAccountId!,
+            provider: account?.provider!,
             image: user?.image,
           },
         });
@@ -61,6 +58,7 @@ export const authOptions: AuthOptions = {
     async session({
       session,
       token,
+      user,
     }: {
       session: CustomSession;
       token: JWT;

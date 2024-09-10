@@ -1,5 +1,5 @@
 "use client";
-import  { Dispatch, SetStateAction } from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -9,7 +9,7 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-} from "../ui/alert-dialog";
+} from "@/components/ui/alert-dialog";
 import { signOut } from "next-auth/react";
 
 export default function LogoutModal({
@@ -32,7 +32,7 @@ export default function LogoutModal({
         <AlertDialogHeader>
           <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
           <AlertDialogDescription>
-            This action will delete your current session and you {"can't"} access
+            This action will delete your current session and you can't access
             private routes
           </AlertDialogDescription>
         </AlertDialogHeader>
