@@ -1,10 +1,11 @@
+import React from "react";
 import { Button } from "../ui/button";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-800 text-white py-12">
+    <footer className="bg-zinc-800 text-white py-12">
       <div className="container mx-auto text-center">
-        <p className="mb-4">© 2024 PodBite. All rights reserved.</p>
+        <p className="mb-4 text-lg">© 2024 . All rights reserved.</p>
         <div className="flex justify-center space-x-4 ">
           <Button variant="link" className="text-white">
             Privacy Policy

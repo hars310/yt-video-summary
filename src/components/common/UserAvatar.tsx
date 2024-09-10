@@ -1,5 +1,6 @@
 "use client";
-import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import React from "react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default function UserAvatar({
   image,

@@ -6,7 +6,7 @@ import { Button } from "../ui/button";
 import { CustomUser } from "@/app/api/auth/[...nextauth]/options";
 import { toast } from "sonner";
 import axios, { AxiosError } from "axios";
-import getStripe from "../../lib/stripe";
+import getStripe from "@/lib/stripe";
 export default function Pricing({ user }: { user?: CustomUser }) {
   const [loading, setLoading] = useState(false);
 
@@ -33,12 +33,12 @@ export default function Pricing({ user }: { user?: CustomUser }) {
   };
 
   return (
-    <section className="py-24">
+    <section className="py-24 px-10 border-t-[0.2px]">
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold text-center ">
+        <h2 className="text-5xl font-bold text-center ">
           Simple, Transparent Pricing
         </h2>
-        <p className="text-2xl text-indigo-500 font-bold text-center mb-12">
+        <p className="text-3xl text-indigo-500 font-bold text-center mb-12">
           1 coin = 1 ₹
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

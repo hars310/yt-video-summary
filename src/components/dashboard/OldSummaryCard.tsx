@@ -1,4 +1,5 @@
 "use client";
+import { UserSummaries } from "@/types";
 import Link from "next/link";
 import React from "react";
 

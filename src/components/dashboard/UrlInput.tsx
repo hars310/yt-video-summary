@@ -1,11 +1,12 @@
 "use client";
-import { CustomUser } from "../../app/api/auth/[...nextauth]/options";
+import { CustomUser } from "@/app/api/auth/[...nextauth]/options";
 import axios, { AxiosError } from "axios";
-import  { useState } from "react";
+import React, { useState } from "react";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import Loading from "../common/Loading";
-
+import { clearCache } from "@/actions/commonActions";
+import { AddUrlErrorType, ChatType } from "@/types";
 
 export default function UrlInput({ user }: { user: CustomUser }) {
   const router = useRouter();
